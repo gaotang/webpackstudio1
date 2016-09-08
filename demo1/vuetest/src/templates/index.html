@@ -1,0 +1,45 @@
+Index
+
+<button type="button" class="btn btn-default" @click="OnClickDialog">ShowDialog</button>
+
+
+<alert type="warning">
+  Hello World Index!
+</alert>
+
+
+<a href="#" v-link="{ path: '/list'}">Goto List</a>
+<br />
+<a href="#" v-link="{ path: '/tab1'}">tab1</a>
+<a href="#" v-link="{ path: '/tab2'}">tab2</a>
+         <router-view></router-view>
+
+
+<alert :show.sync="showRight" placement="top-right" duration="3000" type="success" width="400px" dismissable>
+  <span class="icon-ok-circled alert-icon-float-left"></span>
+  <strong>Well Done!</strong>
+  <p>You successfully read this important alert message.</p>
+</alert>
+
+<alert :show.sync="showTop" placement="top" duration="3000" type="danger" width="400px" dismissable>
+  <span class="icon-info-circled alert-icon-float-left"></span>
+  <strong>Heads up!</strong>
+  <p>This alert needs your attention.</p>
+</alert>
+
+
+<modal :show.sync="showCustomModal" effect="fade" width="400">
+  <div slot="modal-header" class="modal-header">
+    <h4 class="modal-title">
+      <i>Custom</i> <code>Modal</code> <b>Title</b>
+    </h4>
+  </div>
+  <div slot="modal-body" class="modal-body">...</div>
+  <div slot="modal-footer" class="modal-footer">
+    <button type="button" class="btn btn-default" @click="showCustomModal = false">Exit</button>
+    <button type="button" class="btn btn-success" @click="showCustomModal = false">Custom Save</button>
+  </div>
+</modal>
+<!--<modal title="Fade Modal" :show.sync="showCustomModal" effect="fade" width="800">
+  <div slot="modal-body" class="modal-body">1111111111</div>
+</modal>-->
